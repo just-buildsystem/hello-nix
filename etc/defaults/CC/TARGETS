@@ -1,0 +1,51 @@
+{ "defaults":
+  { "type": "configure"
+  , "target": "defaults (unconfigured)"
+  , "arguments_config": ["TOOLCHAIN_CONFIG"]
+  , "config":
+    { "type": "let*"
+    , "bindings":
+      [ [ "CC toolchain"
+        , { "type": "lookup"
+          , "map":
+            { "type": "var"
+            , "name": "TOOLCHAIN_CONFIG"
+            , "default": {"type": "empty_map"}
+            }
+          , "key": "CC"
+          , "default": {"type": "empty_map"}
+          }
+        ]
+      , [ "CC"
+        , { "type": "lookup"
+          , "map": {"type": "var", "name": "CC toolchain"}
+          , "key": "CC"
+          , "default": "cc"
+          }
+        ]
+      , [ "CXX"
+        , { "type": "lookup"
+          , "map": {"type": "var", "name": "CC toolchain"}
+          , "key": "CXX"
+          , "default": "c++"
+          }
+        ]
+      , [ "PATH"
+        , { "type": "lookup"
+          , "map": {"type": "var", "name": "CC toolchain"}
+          , "key": "PATH"
+          , "default": []
+          }
+        ]
+      ]
+    , "body": {"type": "env", "vars": ["CC", "CXX", "PATH"]}
+    }
+  }
+, "defaults (unconfigured)":
+  { "type": "defaults"
+  , "arguments_config": ["CC", "CXX", "PATH"]
+  , "CC": [{"type": "var", "name": "CC"}]
+  , "CXX": [{"type": "var", "name": "CXX"}]
+  , "PATH": {"type": "var", "name": "PATH"}
+  }
+}

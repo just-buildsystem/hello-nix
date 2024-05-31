@@ -1,0 +1,18 @@
+{ "example":
+  { "type": ["@", "rules", "proto", "library"]
+  , "name": ["example"]
+  , "srcs": ["example.proto"]
+  }
+, "write":
+  { "type": ["@", "rules", "CC", "binary"]
+  , "name": ["write"]
+  , "srcs": ["write.cc"]
+  , "private-proto": ["example"]
+  }
+, "read":
+  { "type": ["@", "rules", "CC", "binary"]
+  , "name": ["read"]
+  , "srcs": ["read.cc"]
+  , "private-proto": ["example"]
+  }
+}

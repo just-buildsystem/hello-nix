@@ -1,0 +1,7 @@
+{"withExtendedPath":
+  { "type": ["@", "rules", "shell/test", "script"]
+  , "name": ["find-in-extended-path"]
+  , "test": ["test.sh"]
+  , "deps": [["@", "src", "withExtendedPath", ""]]
+  }
+}

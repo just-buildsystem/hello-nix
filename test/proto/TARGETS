@@ -1,0 +1,7 @@
+{ "":
+  { "type": ["@", "rules", "shell/test", "script"]
+  , "name": ["proto"]
+  , "test": ["test.sh"]
+  , "deps": [["@", "src", "proto", "write"], ["@", "src", "proto", "read"]]
+  }
+}

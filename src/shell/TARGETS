@@ -1,0 +1,13 @@
+{ "out":
+  { "type": ["@", "rules", "shell", "cmds"]
+  , "outs": ["out.txt"]
+  , "cmds": ["./hello > out.txt"]
+  , "deps": [["hello", ""]]
+  }
+, "":
+  { "type": ["@", "rules", "shell", "cmds"]
+  , "outs": ["wc.txt", "tr.txt"]
+  , "cmds": ["wc out.txt > wc.txt", "cat out.txt | tr a-z A-Z > tr.txt"]
+  , "deps": ["out"]
+  }
+}

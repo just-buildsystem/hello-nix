@@ -1,0 +1,6 @@
+{ "":
+  { "type": ["@", "rules", "CC", "binary"]
+  , "name": ["withExtendedPath"]
+  , "srcs": ["extend-path.cc"]
+  }
+}

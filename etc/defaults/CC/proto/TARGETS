@@ -1,0 +1,70 @@
+{ "defaults":
+  { "type": "configure"
+  , "target": "configure"
+  , "config":
+    {"type": "singleton_map", "key": "deps", "value": ["libprotobuf"]}
+  }
+, "service defaults":
+  { "type": "configure"
+  , "target": "configure"
+  , "config":
+    { "type": "singleton_map"
+    , "key": "deps"
+    , "value": ["libgrpc++", "libprotobuf"]
+    }
+  }
+, "configure":
+  { "type": "configure"
+  , "target": "defaults (unconfigured)"
+  , "arguments_config": ["TOOLCHAIN_CONFIG"]
+  , "config":
+    { "type": "let*"
+    , "bindings":
+      [ [ "proto toolchain"
+        , { "type": "lookup"
+          , "map":
+            { "type": "var"
+            , "name": "TOOLCHAIN_CONFIG"
+            , "default": {"type": "empty_map"}
+            }
+          , "key": "PROTO"
+          , "default": {"type": "empty_map"}
+          }
+        ]
+      , [ "PROTOC"
+        , { "type": "lookup"
+          , "map": {"type": "var", "name": "proto toolchain"}
+          , "key": "PROTOC"
+          , "default": "protoc"
+          }
+        ]
+      , [ "GRPC_PLUGIN"
+        , { "type": "lookup"
+          , "map": {"type": "var", "name": "proto toolchain"}
+          , "key": "GRPC_PLUGIN"
+          , "default": "grpc_cpp_plugin"
+          }
+        ]
+      , [ "PATH"
+        , { "type": "lookup"
+          , "map": {"type": "var", "name": "proto toolchain"}
+          , "key": "PATH"
+          , "default": []
+          }
+        ]
+      ]
+    , "body": {"type": "env", "vars": ["PROTOC", "GRPC_PLUGIN", "PATH"]}
+    }
+  }
+, "defaults (unconfigured)":
+  { "type": "defaults"
+  , "arguments_config": ["PROTOC", "GRPC_PLUGIN", "PATH", "deps"]
+  , "PROTOC": [{"type": "var", "name": "PROTOC"}]
+  , "GRPC_PLUGIN": [{"type": "var", "name": "GRPC_PLUGIN"}]
+  , "PATH": {"type": "var", "name": "PATH"}
+  , "deps": {"type": "var", "name": "deps"}
+  }
+, "libprotobuf":
+  {"type": ["CC/pkgconfig", "system_library"], "name": ["protobuf"]}
+, "libgrpc++": {"type": ["CC/pkgconfig", "system_library"], "name": ["grpc++"]}
+}

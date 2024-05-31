@@ -1,0 +1,21 @@
+{ "defaults":
+  { "type": "defaults"
+  , "arguments_config": ["TOOLCHAIN_CONFIG"]
+  , "PATH":
+    { "type": "lookup"
+    , "key": "PATH"
+    , "default": []
+    , "map":
+      { "type": "lookup"
+      , "key": "test"
+      , "default": {"type": "empty_map"}
+      , "map":
+        { "type": "var"
+        , "name": "TOOLCHAIN_CONFIG"
+        , "default": {"type": "empty_map"}
+        }
+      }
+    }
+  , "base": [["@", "base", "shell", "defaults"]]
+  }
+}

@@ -1,0 +1,51 @@
+{ "defaults":
+  { "type": "configure"
+  , "target": "defaults (unconfigured)"
+  , "arguments_config": ["TOOLCHAIN_CONFIG"]
+  , "config":
+    { "type": "let*"
+    , "bindings":
+      [ [ "PKGCONFIG toolchain"
+        , { "type": "lookup"
+          , "map":
+            { "type": "var"
+            , "name": "TOOLCHAIN_CONFIG"
+            , "default": {"type": "empty_map"}
+            }
+          , "key": "PKGCONFIG"
+          , "default": {"type": "empty_map"}
+          }
+        ]
+      , [ "pkg-config"
+        , { "type": "lookup"
+          , "map": {"type": "var", "name": "PKGCONFIG toolchain"}
+          , "key": "pkg-config"
+          , "default": "pkg-config"
+          }
+        ]
+      , [ "PATH"
+        , { "type": "lookup"
+          , "map": {"type": "var", "name": "PKGCONFIG toolchain"}
+          , "key": "PATH"
+          , "default": []
+          }
+        ]
+      , [ "PKG_CONFIG_PATH"
+        , { "type": "lookup"
+          , "map": {"type": "var", "name": "PKGCONFIG toolchain"}
+          , "key": "PKG_CONFIG_PATH"
+          , "default": []
+          }
+        ]
+      ]
+    , "body": {"type": "env", "vars": ["pkg-config", "PATH", "PKG_CONFIG_PATH"]}
+    }
+  }
+, "defaults (unconfigured)":
+  { "type": "defaults"
+  , "arguments_config": ["pkg-config", "PATH", "PKG_CONFIG_PATH"]
+  , "pkg-config": [{"type": "var", "name": "pkg-config"}]
+  , "PATH": {"type": "var", "name": "PATH"}
+  , "PKG_CONFIG_PATH": {"type": "var", "name": "PKG_CONFIG_PATH"}
+  }
+}

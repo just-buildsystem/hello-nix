@@ -1,0 +1,7 @@
+{ "":
+  { "type": ["@", "rules", "shell/test", "script"]
+  , "name": ["hello"]
+  , "test": ["test_hello.sh"]
+  , "deps": [["@", "src", "hello", ""]]
+  }
+}

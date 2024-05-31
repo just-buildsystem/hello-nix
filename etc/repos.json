@@ -1,0 +1,30 @@
+{ "repositories":
+  { "":
+    { "repository": {"type": "file", "path": "src"}
+    , "bindings": {"rules": "rules/nix"}
+    }
+  , "test":
+    { "repository": {"type": "file", "path": "test"}
+    , "bindings": {"rules": "rules/nix-test", "src": ""}
+    }
+  , "defaults": {"repository": {"type": "file", "path": "etc/defaults"}}
+  , "rules":
+    { "repository":
+      { "type": "git"
+      , "branch": "master"
+      , "commit": "0d436f26134d3fcaa695e4e6e87249d7fa381e44"
+      , "repository": "https://github.com/just-buildsystem/rules-cc.git"
+      , "subdir": "rules"
+      }
+    }
+  , "rules/nix":
+    {"repository": "rules", "target_root": "defaults", "rule_root": "rules"}
+  , "rules/nix-test":
+    { "repository": "rules"
+    , "target_root": "defaults"
+    , "rule_root": "rules"
+    , "target_file_name": "test.TARGETS"
+    , "bindings": {"base": "rules/nix"}
+    }
+  }
+}

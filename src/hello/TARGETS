@@ -1,0 +1,9 @@
+{ "":
+  { "type": ["@", "rules", "CC", "binary"]
+  , "name": ["hello"]
+  , "srcs": ["hello.cpp"]
+  , "private-deps": ["fmt"]
+  }
+, "fmt":
+  {"type": ["@", "rules", "CC/pkgconfig", "system_library"], "name": ["fmt"]}
+}
