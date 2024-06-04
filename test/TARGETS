@@ -1,0 +1,10 @@
+{ "":
+  { "type": "install"
+  , "tainted": ["test"]
+  , "dirs":
+    [ [["./", "hello", ""], "hello"]
+    , [["./", "proto", ""], "proto"]
+    , [["./", "withExtendedPath", ""], "withExtendedPath"]
+    ]
+  }
+}
