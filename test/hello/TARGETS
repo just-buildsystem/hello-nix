@@ -1,4 +1,5 @@
-{ "":
+{ "": {"type": "install", "tainted": ["test"], "deps": ["hello"]}
+, "hello":
   { "type": ["@", "rules", "shell/test", "script"]
   , "name": ["hello"]
   , "test": ["test_hello.sh"]
