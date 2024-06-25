@@ -6,6 +6,7 @@
 , grpc
 , clang
 , fmt
+, rustc
 
   # for tests
 , gnugrep
@@ -44,6 +45,7 @@ stdenv.mkDerivation rec {
           test=$(jo PATH=$(jo -a ${gnugrep}/bin ${unixtools.xxd}/bin)) \
           PKGCONFIG=$(jo pkg-config=${pkg-config}/bin/pkg-config \
                          PKG_CONFIG_PATH=$(jo -a $PKG_CONFIG_PATH)) \
+          RUST=$(jo PATH=$(jo -a ${rustc}/bin ${clang}/bin ${coreutils}/bin /bin)) \
           ) > config.json
     cat config.json
     jo "just files"=$(jo config=$(jo -a $(jo root=system path=$out/share/config.json))) > rc.json

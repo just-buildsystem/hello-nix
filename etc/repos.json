@@ -1,7 +1,7 @@
 { "repositories":
   { "":
     { "repository": {"type": "file", "path": "src"}
-    , "bindings": {"rules": "rules/nix"}
+    , "bindings": {"rules": "rules/nix", "rust": "rules-rust/nix"}
     }
   , "test":
     { "repository": {"type": "file", "path": "test"}
@@ -10,6 +10,11 @@
   , "defaults": {"repository": {"type": "file", "path": "etc/defaults"}}
   , "rules/nix":
     {"repository": "rules", "target_root": "defaults", "rule_root": "rules"}
+  , "rules-rust/nix":
+    { "repository": "rules-rust"
+    , "target_root": "defaults"
+    , "rule_root": "rules-rust"
+    }
   , "rules/nix-test":
     { "repository": "rules"
     , "target_root": "defaults"
@@ -23,6 +28,15 @@
       , "repository": "https://github.com/just-buildsystem/rules-cc"
       , "branch": "master"
       , "commit": "0e9d13a761c878a647fde5a543946a02bf2c693d"
+      , "subdir": "rules"
+      }
+    }
+  , "rules-rust":
+    { "repository":
+      { "type": "git"
+      , "repository": "https://github.com/just-buildsystem/rules-rust"
+      , "branch": "master"
+      , "commit": "bf3e05a614f1de5a9a8a0f8e40f1dd9e1f6609da"
       , "subdir": "rules"
       }
     }

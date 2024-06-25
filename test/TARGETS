@@ -4,6 +4,7 @@
   , "dirs":
     [ [["./", "hello", ""], "hello"]
     , [["./", "proto", ""], "proto"]
+    , [["./", "rust", ""], "rust"]
     , [["./", "withExtendedPath", ""], "withExtendedPath"]
     ]
   }

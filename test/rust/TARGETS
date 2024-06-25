@@ -1,0 +1,8 @@
+{ "":
+  { "type": "install"
+  , "tainted": ["test"]
+  , "dirs":
+    [ [["./", "hello", ""], "hello"]
+    ]
+  }
+}
