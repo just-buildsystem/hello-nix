@@ -7,6 +7,7 @@ let
   pkgs = import nixpkgs {};
 
   nix-dependencies = import ./nix-dependencies { nixpkgs = pkgs; } ;
+  update-deps = import ./nix-import-tools { nixpkgs = pkgs; } ;
 
 in pkgs.mkShell rec {
 
@@ -14,6 +15,7 @@ in pkgs.mkShell rec {
 
   buildInputs = with pkgs; [
      niv
+     update-deps
   ];
 
   shellHook = ''
