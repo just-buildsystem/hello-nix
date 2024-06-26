@@ -12,4 +12,5 @@ just-import-git -C ${ROOT}/etc/repos.template.json \
                 --as rules -b ${RULES_CC_BRANCH} ${RULES_CC_REPO} rules \
     | just-import-git -C - \
                 --as rules-rust -b ${RULES_RUST_BRANCH} ${RULES_RUST_REPO} rules-rust \
+    | just-deduplicate-repos \
     | hdump > ${ROOT}/etc/repos.json

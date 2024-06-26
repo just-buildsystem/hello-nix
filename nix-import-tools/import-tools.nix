@@ -26,7 +26,9 @@ stdenv.mkDerivation rec {
 
   unpackPhase = ''
     cp $srcjust/bin/just-import-git.py .
+    cp $srcjust/bin/just-deduplicate-repos.py .
     cp $srcrustrules/bin/hdump.py .
+    cp $srcrustrules/bin/just-import-cargo.py .
   '';
 
   dontBuild = true;
@@ -34,8 +36,11 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mkdir -p $out/bin
     cp just-import-git.py $out/bin/just-import-git
+    cp just-deduplicate-repos.py $out/bin/just-deduplicate-repos
     cp hdump.py $out/bin/hdump
-    chmod 555 $out/bin/just-import-git $out/bin/hdump
+    cp just-import-cargo.py $out/bin/just-import-cargo
+    chmod 555 $out/bin/just-import-git $out/bin/just-deduplicate-repos
+    chmod 555 $out/bin/hdump $out/bin/just-import-cargo
   '';
 
 }
