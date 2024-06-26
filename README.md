@@ -117,6 +117,9 @@ There are two files pinning dependencies
    calls [etc/generate-repos.sh](./etc/generate-repos.sh) in our `nix-shell`,
    which also brings in tools required for this step.
 
+Specific considerations
+ - [cargo](./src/rust/cargo/README.md)
+
 ### Logical repositories
 
 This project uses several logical repositories.

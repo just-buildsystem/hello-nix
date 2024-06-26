@@ -16,6 +16,7 @@ in pkgs.mkShell rec {
   buildInputs = with pkgs; [
      niv
      update-deps
+     cargo
   ];
 
   shellHook = ''

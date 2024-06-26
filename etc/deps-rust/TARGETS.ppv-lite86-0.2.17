@@ -1,0 +1,32 @@
+{ "ppv_lite86":
+  { "type": "export"
+  , "target": "ppv_lite86-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "ppv_lite86-internal":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["ppv_lite86"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs":
+    [ "src/soft.rs"
+    , "src/generic.rs"
+    , "src/types.rs"
+    , "src/lib.rs"
+    , "src/x86_64/sse2.rs"
+    , "src/x86_64/mod.rs"
+    ]
+  , "edition": ["2018"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps": []
+  , "cargo_features": ["simd", "std"]
+  , "stage": ["ppv-lite86-0.2.17"]
+  , "version": ["0", "2", "17"]
+  , "pkg_name": ["ppv-lite86"]
+  }
+, "default": {"type": ["@", "rules", "cargo", "feature"], "name": ["default"]}
+, "no_simd": {"type": ["@", "rules", "cargo", "feature"], "name": ["no_simd"]}
+, "simd": {"type": ["@", "rules", "cargo", "feature"], "name": ["simd"]}
+, "std": {"type": ["@", "rules", "cargo", "feature"], "name": ["std"]}
+}

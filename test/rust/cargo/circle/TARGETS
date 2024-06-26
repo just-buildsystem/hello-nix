@@ -1,0 +1,13 @@
+{ "": {"type": "install", "tainted": ["test"], "deps": ["test-sampling"]}
+, "test-sampling":
+  { "type": ["@", "rules", "shell/test", "script"]
+  , "name": ["sampling"]
+  , "test": ["test_circle_sampling.sh"]
+  , "deps": ["sample", "verify.py"]
+  , "keep": ["sampled"]
+  }
+, "sample":
+  { "type": "install"
+  , "files": {"bin/sample": ["@", "cargo/circle", "", "circle_sampling"]}
+  }
+}

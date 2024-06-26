@@ -7,10 +7,12 @@
 , clang
 , fmt
 , rustc
+, busybox
 
   # for tests
 , gnugrep
 , unixtools
+, python3
 }:
 
 stdenv.mkDerivation rec {
@@ -42,10 +44,11 @@ stdenv.mkDerivation rec {
                      GRPC_PLUGIN=${grpc}/bin/grpc_cpp_plugin \
              ) \
           shell=$(jo PATH=$(jo -a ${coreutils}/bin)) \
-          test=$(jo PATH=$(jo -a ${gnugrep}/bin ${unixtools.xxd}/bin)) \
+          test=$(jo PATH=$(jo -a ${gnugrep}/bin ${unixtools.xxd}/bin ${python3}/bin)) \
           PKGCONFIG=$(jo pkg-config=${pkg-config}/bin/pkg-config \
                          PKG_CONFIG_PATH=$(jo -a $PKG_CONFIG_PATH)) \
-          RUST=$(jo PATH=$(jo -a ${rustc}/bin ${clang}/bin ${coreutils}/bin /bin)) \
+          RUST=$(jo PATH=$(jo -a ${rustc}/bin ${clang}/bin ${coreutils}/bin \
+                                 ${busybox}/bin)) \
           ) > config.json
     cat config.json
     jo "just files"=$(jo config=$(jo -a $(jo root=system path=$out/share/config.json))) > rc.json
