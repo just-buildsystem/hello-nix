@@ -112,13 +112,10 @@ There are two files pinning dependencies
    be updated using [update-nix-dependencies.sh](./update-nix-dependencies.sh)
    which simply calls `niv update` in our `nix-shell`.
  - The dependencies on other other justbuild projects are
-   pinned in [etc/repos.json](etc/repos.json). As, at the
-   moment, there is only one external justbuild dependency,
-   the [rules-cc](https://github.com/just-buildsystem/rules-cc),
-   this is updated by hand. For larger
-   projects [just-import-git](https://github.com/just-buildsystem/justbuild/blob/master/share/man/just-import-git.1.md)
-   would be used to generate this file out of a description of the
-   local repositories and the dependencies to import.
+   pinned in [etc/repos.json](etc/repos.json). They can be updated using
+   [update-just-dependencies.sh](./update-just-dependencies.sh) which
+   calls [etc/generate-repos.sh](./etc/generate-repos.sh) in our `nix-shell`,
+   which also brings in tools required for this step.
 
 ### Logical repositories
 

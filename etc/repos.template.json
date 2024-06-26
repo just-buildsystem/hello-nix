@@ -22,23 +22,5 @@
     , "target_file_name": "test.TARGETS"
     , "bindings": {"base": "rules/nix"}
     }
-  , "rules":
-    { "repository":
-      { "type": "git"
-      , "repository": "https://github.com/just-buildsystem/rules-cc"
-      , "branch": "master"
-      , "commit": "0e9d13a761c878a647fde5a543946a02bf2c693d"
-      , "subdir": "rules"
-      }
-    }
-  , "rules-rust":
-    { "repository":
-      { "type": "git"
-      , "repository": "https://github.com/just-buildsystem/rules-rust"
-      , "branch": "master"
-      , "commit": "bf3e05a614f1de5a9a8a0f8e40f1dd9e1f6609da"
-      , "subdir": "rules"
-      }
-    }
   }
 }
