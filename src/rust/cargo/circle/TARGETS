@@ -1,0 +1,15 @@
+{ "circle_sampling":
+  { "type": ["@", "rules", "rust", "binary"]
+  , "name": ["circle_sampling"]
+  , "crate_root": ["src/main.rs"]
+  , "srcs": ["src/main.rs"]
+  , "edition": ["2021"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps": [["@", "rand", "", "rand"]]
+  , "cargo_features": []
+  , "stage": ["circle_sampling-0.1.0"]
+  , "version": ["0", "1", "0"]
+  , "pkg_name": ["circle_sampling"]
+  }
+}

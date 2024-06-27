@@ -1,0 +1,34 @@
+{ "rand_core":
+  { "type": "export"
+  , "target": "rand_core-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "rand_core-internal":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["rand_core"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs":
+    [ "src/impls.rs"
+    , "src/block.rs"
+    , "src/os.rs"
+    , "src/le.rs"
+    , "src/error.rs"
+    , "src/lib.rs"
+    ]
+  , "edition": ["2018"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps": [["@", "getrandom", "", "getrandom"]]
+  , "cargo_features": ["alloc", "getrandom", "std"]
+  , "stage": ["rand_core-0.6.4"]
+  , "version": ["0", "6", "4"]
+  , "pkg_name": ["rand_core"]
+  }
+, "alloc": {"type": ["@", "rules", "cargo", "feature"], "name": ["alloc"]}
+, "getrandom":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["getrandom"]}
+, "serde": {"type": ["@", "rules", "cargo", "feature"], "name": ["serde"]}
+, "serde1": {"type": ["@", "rules", "cargo", "feature"], "name": ["serde1"]}
+, "std": {"type": ["@", "rules", "cargo", "feature"], "name": ["std"]}
+}

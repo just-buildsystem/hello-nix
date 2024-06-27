@@ -2,8 +2,7 @@
   { "type": "install"
   , "tainted": ["test"]
   , "dirs":
-    [ [["./", "hello", ""], "hello"]
-    , [["./", "cargo", ""], "cargo"]
+    [ [["./", "circle", ""], "circle"]
     ]
   }
 }

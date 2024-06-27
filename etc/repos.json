@@ -5,7 +5,8 @@
     }
   , "test":
     { "repository": {"type": "file", "path": "test"}
-    , "bindings": {"rules": "rules/nix-test", "src": ""}
+    , "bindings":
+      {"rules": "rules/nix-test", "src": "", "cargo/circle": "circle_sampling"}
     }
   , "defaults": {"repository": {"type": "file", "path": "etc/defaults"}}
   , "rules/nix":
@@ -14,6 +15,7 @@
     { "repository": "rules-rust"
     , "target_root": "defaults"
     , "rule_root": "rules-rust"
+    , "target_file_name": "nix.TARGETS"
     }
   , "rules/nix-test":
     { "repository": "rules"
@@ -36,9 +38,124 @@
       { "type": "git"
       , "repository": "https://github.com/just-buildsystem/rules-rust"
       , "branch": "master"
-      , "commit": "bf3e05a614f1de5a9a8a0f8e40f1dd9e1f6609da"
+      , "commit": "9a4697a2c948a4bcb4a2232a371b6cb3c178e20b"
       , "subdir": "rules"
       }
+    }
+  , "circle_sampling/cfg-if-1.0.0":
+    { "repository":
+      { "type": "archive"
+      , "fetch": "https://crates.io/api/v1/crates/cfg-if/1.0.0/download"
+      , "content": "c77d9a7af0aea15217dfcdd046013598f696acb0"
+      , "subdir": "cfg-if-1.0.0"
+      , "distfile": "cfg-if-1.0.0.tar.gz"
+      }
+    , "bindings": {"rules": "circle_sampling/rust-rules"}
+    , "target_root": "circle_sampling/external-deps"
+    , "target_file_name": "TARGETS.cfg-if-1.0.0"
+    }
+  , "circle_sampling":
+    { "repository": {"type": "file", "path": "src/rust/cargo/circle"}
+    , "bindings":
+      { "rules": "circle_sampling/rust-rules"
+      , "rand": "circle_sampling/rand-0.8.5"
+      }
+    }
+  , "circle_sampling/getrandom-0.2.15":
+    { "repository":
+      { "type": "archive"
+      , "fetch": "https://crates.io/api/v1/crates/getrandom/0.2.15/download"
+      , "content": "8c167a8cdc3f6f149dd3f37ba9c6932a2592052a"
+      , "subdir": "getrandom-0.2.15"
+      , "distfile": "getrandom-0.2.15.tar.gz"
+      }
+    , "bindings":
+      { "rules": "circle_sampling/rust-rules"
+      , "cfg-if": "circle_sampling/cfg-if-1.0.0"
+      , "libc": "circle_sampling/libc-0.2.155"
+      }
+    , "target_root": "circle_sampling/external-deps"
+    , "target_file_name": "TARGETS.getrandom-0.2.15"
+    }
+  , "circle_sampling/libc-0.2.155":
+    { "repository":
+      { "type": "archive"
+      , "fetch": "https://crates.io/api/v1/crates/libc/0.2.155/download"
+      , "content": "67353d815cff7dd0c37e4426c338bf7f2534a5c1"
+      , "subdir": "libc-0.2.155"
+      , "distfile": "libc-0.2.155.tar.gz"
+      }
+    , "bindings": {"rules": "circle_sampling/rust-rules"}
+    , "target_root": "circle_sampling/external-deps"
+    , "target_file_name": "TARGETS.libc-0.2.155"
+    }
+  , "circle_sampling/ppv-lite86-0.2.17":
+    { "repository":
+      { "type": "archive"
+      , "fetch": "https://crates.io/api/v1/crates/ppv-lite86/0.2.17/download"
+      , "content": "b142c0fb86f0c3c585c1579a7d671b78441cad27"
+      , "subdir": "ppv-lite86-0.2.17"
+      , "distfile": "ppv-lite86-0.2.17.tar.gz"
+      }
+    , "bindings": {"rules": "circle_sampling/rust-rules"}
+    , "target_root": "circle_sampling/external-deps"
+    , "target_file_name": "TARGETS.ppv-lite86-0.2.17"
+    }
+  , "circle_sampling/rand-0.8.5":
+    { "repository":
+      { "type": "archive"
+      , "fetch": "https://crates.io/api/v1/crates/rand/0.8.5/download"
+      , "content": "768d8f0c5c7abe7eb847ffc1a0ff6e3e5ccc49d3"
+      , "subdir": "rand-0.8.5"
+      , "distfile": "rand-0.8.5.tar.gz"
+      }
+    , "bindings":
+      { "rules": "circle_sampling/rust-rules"
+      , "libc": "circle_sampling/libc-0.2.155"
+      , "rand_chacha": "circle_sampling/rand_chacha-0.3.1"
+      , "rand_core": "circle_sampling/rand_core-0.6.4"
+      }
+    , "target_root": "circle_sampling/external-deps"
+    , "target_file_name": "TARGETS.rand-0.8.5"
+    }
+  , "circle_sampling/rand_chacha-0.3.1":
+    { "repository":
+      { "type": "archive"
+      , "fetch": "https://crates.io/api/v1/crates/rand_chacha/0.3.1/download"
+      , "content": "67d1b4ac6de64f68ced704ee6133b6e97976eadc"
+      , "subdir": "rand_chacha-0.3.1"
+      , "distfile": "rand_chacha-0.3.1.tar.gz"
+      }
+    , "bindings":
+      { "rules": "circle_sampling/rust-rules"
+      , "ppv-lite86": "circle_sampling/ppv-lite86-0.2.17"
+      , "rand_core": "circle_sampling/rand_core-0.6.4"
+      }
+    , "target_root": "circle_sampling/external-deps"
+    , "target_file_name": "TARGETS.rand_chacha-0.3.1"
+    }
+  , "circle_sampling/rand_core-0.6.4":
+    { "repository":
+      { "type": "archive"
+      , "fetch": "https://crates.io/api/v1/crates/rand_core/0.6.4/download"
+      , "content": "7fb776b46fd89e927d5ea0f5df0c220ce650c7dc"
+      , "subdir": "rand_core-0.6.4"
+      , "distfile": "rand_core-0.6.4.tar.gz"
+      }
+    , "bindings":
+      { "rules": "circle_sampling/rust-rules"
+      , "getrandom": "circle_sampling/getrandom-0.2.15"
+      }
+    , "target_root": "circle_sampling/external-deps"
+    , "target_file_name": "TARGETS.rand_core-0.6.4"
+    }
+  , "circle_sampling/external-deps":
+    {"repository": {"type": "file", "path": "etc/deps-rust"}}
+  , "circle_sampling/rust-rules":
+    { "repository": "rules-rust"
+    , "target_root": "defaults"
+    , "rule_root": "rules-rust"
+    , "bindings": {"orig-rules": "rules-rust/nix"}
     }
   }
 }
