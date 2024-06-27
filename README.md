@@ -73,7 +73,8 @@ way as follows.
    pinned using [niv](https://github.com/nmattia/niv).
  - A [nix shell](./shell.nix) uses the derivation at the pinned
    snapshot of the `nixpkgs` and sets an alias for `just-mr` to
-   use the derived rc-file.
+   use the derived rc-file. It also adds a script `withRc-just-mr`
+   that execs `just-mr` with the derived rc-file.
 
 So to build with the correct dependencies for the checked out version,
 simply start a `nix-shell` at the top level of this repository and
@@ -89,6 +90,11 @@ not find certain artifacts referenced in the action cache). So,
 by using the current justbuild when checking out older snapshots,
 we can reconstruct the old actions without the need of cleaning up
 the local build root.
+
+The just described way of working in a `nix-shell` using the
+alias is useful for interactive development. For CI-like usage,
+the script [run-tests](./run-tests) can be used that simply runs
+`withRc-just-mr` in a `nix-shell`.
 
 ## Shell commands
 
