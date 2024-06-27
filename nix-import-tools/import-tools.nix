@@ -19,8 +19,8 @@ stdenv.mkDerivation rec {
   srcrustrules = fetchFromGitHub {
     owner = "just-buildsystem";
     repo = "rules-rust";
-    rev = "bf3e05a614f1de5a9a8a0f8e40f1dd9e1f6609da";
-    sha256 = "sha256-8y10ZmZpeTGtbkIeneaVISyMbVKfIi3gHqyvztnKn0M=";
+    rev = "1a8211bda5c14ef0b2bff3af062c049d5598f02f";
+    sha256 = "sha256-97VbtMp5B/5CtOp9U7J6FNB6omlG/YOfMIBFAsaOyjs=";
   };
 
 
