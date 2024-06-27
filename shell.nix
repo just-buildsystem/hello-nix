@@ -17,6 +17,7 @@ in pkgs.mkShell rec {
      niv
      update-deps
      cargo
+     nix-dependencies
   ];
 
   shellHook = ''

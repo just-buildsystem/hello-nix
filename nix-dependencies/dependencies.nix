@@ -1,5 +1,6 @@
 { stdenv
 , jo
+, bash
 , pkg-config
 , coreutils
 , protobuf_25
@@ -25,6 +26,7 @@ stdenv.mkDerivation rec {
     protobuf_25
     grpc
     jo
+    bash
   ];
 
   buildInputs = [
@@ -52,12 +54,19 @@ stdenv.mkDerivation rec {
           ) > config.json
     cat config.json
     jo "just files"=$(jo config=$(jo -a $(jo root=system path=$out/share/config.json))) > rc.json
+
+    cat > withRc-just-mr <<EOF
+    #!${bash}/bin/bash
+    exec just-mr --rc $out/share/rc.json "\$@"
+    EOF
   '';
 
   installPhase = ''
-    mkdir -p $out/share
+    mkdir -p $out/share $out/bin
     cp config.json $out/share
     cp rc.json $out/share
+    cp withRc-just-mr $out/bin
+    chmod 555 $out/bin/withRc-just-mr
   '';
 
 }
