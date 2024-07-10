@@ -9,12 +9,12 @@
   , "name": ["ppv_lite86"]
   , "crate_root": ["src/lib.rs"]
   , "srcs":
-    [ "src/soft.rs"
-    , "src/generic.rs"
+    [ "src/generic.rs"
     , "src/types.rs"
     , "src/lib.rs"
-    , "src/x86_64/sse2.rs"
+    , "src/soft.rs"
     , "src/x86_64/mod.rs"
+    , "src/x86_64/sse2.rs"
     ]
   , "edition": ["2018"]
   , "arguments_config":
