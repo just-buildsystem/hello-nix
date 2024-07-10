@@ -94,7 +94,9 @@ the local build root.
 The just described way of working in a `nix-shell` using the
 alias is useful for interactive development. For CI-like usage,
 the script [run-tests](./run-tests) can be used that simply runs
-`withRc-just-mr` in a `nix-shell`.
+`withRc-just-mr` in a `nix-shell`. Arguments are forwarded to the
+build command so that you can run, e.g., `./run-tests hello hello`
+or `./run-tests -D '{"RUNS_PER_TEST": 3}'`.
 
 ## Shell commands
 

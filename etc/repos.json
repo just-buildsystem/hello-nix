@@ -23,7 +23,7 @@
       { "type": "git"
       , "repository": "https://github.com/just-buildsystem/rules-cc"
       , "branch": "master"
-      , "commit": "0e9d13a761c878a647fde5a543946a02bf2c693d"
+      , "commit": "8d715c335756e406aea8a7e3e9e2266f69fbdeb9"
       , "subdir": "rules"
       }
     }
@@ -32,7 +32,7 @@
       { "type": "git"
       , "repository": "https://github.com/just-buildsystem/rules-rust"
       , "branch": "master"
-      , "commit": "1a8211bda5c14ef0b2bff3af062c049d5598f02f"
+      , "commit": "c293d508b10221a7c2ba6b4cb84c38ac328ad4ac"
       , "subdir": "rules"
       }
     }
