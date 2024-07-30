@@ -1,0 +1,46 @@
+{ "proc_macro2":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["proc_macro2"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs":
+    [ "build.rs"
+    , "build/probe.rs"
+    , "src/parse.rs"
+    , "src/rcvec.rs"
+    , "src/location.rs"
+    , "src/fallback.rs"
+    , "src/marker.rs"
+    , "src/wrapper.rs"
+    , "src/detection.rs"
+    , "src/extra.rs"
+    , "src/lib.rs"
+    ]
+  , "edition": ["2021"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps": [["@", "unicode-ident", "", "unicode_ident"]]
+  , "cargo_features": ["default", "proc-macro"]
+  , "stage": ["proc-macro2-1.0.86"]
+  , "version": ["1", "0", "86"]
+  , "pkg_name": ["proc-macro2"]
+  }
+, "build_script":
+  { "type": ["@", "rules", "cargo", "build_script"]
+  , "name": ["build_script"]
+  , "crate_root": ["build.rs"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "edition": ["2021"]
+  , "stage": ["proc-macro2-1.0.86"]
+  , "deps": [["@", "unicode-ident", "", "unicode_ident"]]
+  , "cargo_features": ["default", "proc-macro"]
+  , "version": ["1", "0", "86"]
+  , "pkg_name": ["proc-macro2"]
+  }
+, "default": {"type": ["@", "rules", "cargo", "feature"], "name": ["default"]}
+, "nightly": {"type": ["@", "rules", "cargo", "feature"], "name": ["nightly"]}
+, "proc-macro":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["proc-macro"]}
+, "span-locations":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["span-locations"]}
+}

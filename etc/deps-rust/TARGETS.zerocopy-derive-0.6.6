@@ -1,0 +1,25 @@
+{ "zerocopy_derive":
+  { "type": "export"
+  , "target": "zerocopy_derive-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "zerocopy_derive-internal":
+  { "type": ["@", "rules", "rust", "proc-macro"]
+  , "name": ["zerocopy_derive"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs": ["src/repr.rs", "src/lib.rs", "src/ext.rs"]
+  , "edition": ["2021"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps":
+    [ ["@", "proc-macro2", "", "proc_macro2"]
+    , ["@", "quote", "", "quote"]
+    , ["@", "syn", "", "syn"]
+    ]
+  , "cargo_features": []
+  , "stage": ["zerocopy-derive-0.6.6"]
+  , "version": ["0", "6", "6"]
+  , "pkg_name": ["zerocopy-derive"]
+  }
+}

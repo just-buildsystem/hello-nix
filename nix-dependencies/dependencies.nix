@@ -40,7 +40,7 @@ stdenv.mkDerivation rec {
   buildPhase = ''
     echo PKG_CONFIG_PATH=$PKG_CONFIG_PATH
     jo TOOLCHAIN_CONFIG=$(jo \
-          CC=$(jo PATH=$(jo -a ${clang}/bin ${coreutils}/bin)) \
+          CC=$(jo PATH=$(jo -a ${clang}/bin ${coreutils}/bin ${busybox}/bin)) \
           PROTO=$(jo PATH=$(jo -a ${protobuf_25}/bin ${grpc}/bin) \
                      PROTOC=${protobuf_25}/bin/protoc \
                      GRPC_PLUGIN=${grpc}/bin/grpc_cpp_plugin \

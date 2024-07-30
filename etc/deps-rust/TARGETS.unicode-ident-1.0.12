@@ -1,0 +1,21 @@
+{ "unicode_ident":
+  { "type": "export"
+  , "target": "unicode_ident-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "unicode_ident-internal":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["unicode_ident"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs": ["src/tables.rs", "src/lib.rs"]
+  , "edition": ["2018"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps": []
+  , "cargo_features": []
+  , "stage": ["unicode-ident-1.0.12"]
+  , "version": ["1", "0", "12"]
+  , "pkg_name": ["unicode-ident"]
+  }
+}

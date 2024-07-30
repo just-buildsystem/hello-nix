@@ -1,0 +1,37 @@
+{ "zerocopy":
+  { "type": "export"
+  , "target": "zerocopy-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "zerocopy-internal":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["zerocopy"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs":
+    [ "src/post_monomorphization_compile_fail_tests.rs"
+    , "src/derive_util.rs"
+    , "src/lib.rs"
+    , "src/byteorder.rs"
+    ]
+  , "edition": ["2021"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps":
+    [ ["@", "byteorder", "", "byteorder"]
+    , ["@", "zerocopy-derive", "", "zerocopy_derive"]
+    ]
+  , "cargo_features": ["simd"]
+  , "stage": ["zerocopy-0.6.6"]
+  , "version": ["0", "6", "6"]
+  , "pkg_name": ["zerocopy"]
+  }
+, "__internal_use_only_features_that_work_on_stable":
+  { "type": ["@", "rules", "cargo", "feature"]
+  , "name": ["__internal_use_only_features_that_work_on_stable"]
+  }
+, "alloc": {"type": ["@", "rules", "cargo", "feature"], "name": ["alloc"]}
+, "simd": {"type": ["@", "rules", "cargo", "feature"], "name": ["simd"]}
+, "simd-nightly":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["simd-nightly"]}
+}
