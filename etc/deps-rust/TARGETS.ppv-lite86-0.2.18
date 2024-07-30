@@ -1,10 +1,4 @@
 { "ppv_lite86":
-  { "type": "export"
-  , "target": "ppv_lite86-internal"
-  , "flexible_config":
-    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
-  }
-, "ppv_lite86-internal":
   { "type": ["@", "rules", "rust", "library"]
   , "name": ["ppv_lite86"]
   , "crate_root": ["src/lib.rs"]
@@ -16,13 +10,13 @@
     , "src/x86_64/mod.rs"
     , "src/x86_64/sse2.rs"
     ]
-  , "edition": ["2018"]
+  , "edition": ["2021"]
   , "arguments_config":
     ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
-  , "deps": []
+  , "deps": [["@", "zerocopy", "", "zerocopy"]]
   , "cargo_features": ["simd", "std"]
-  , "stage": ["ppv-lite86-0.2.17"]
-  , "version": ["0", "2", "17"]
+  , "stage": ["ppv-lite86-0.2.18"]
+  , "version": ["0", "2", "18"]
   , "pkg_name": ["ppv-lite86"]
   }
 , "default": {"type": ["@", "rules", "cargo", "feature"], "name": ["default"]}

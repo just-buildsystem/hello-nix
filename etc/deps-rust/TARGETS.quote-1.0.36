@@ -1,0 +1,32 @@
+{ "quote":
+  { "type": "export"
+  , "target": "quote-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "quote-internal":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["quote"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs":
+    [ "src/spanned.rs"
+    , "src/runtime.rs"
+    , "src/format.rs"
+    , "src/to_tokens.rs"
+    , "src/lib.rs"
+    , "src/ident_fragment.rs"
+    , "src/ext.rs"
+    ]
+  , "edition": ["2018"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps": [["@", "proc-macro2", "", "proc_macro2"]]
+  , "cargo_features": ["default", "proc-macro"]
+  , "stage": ["quote-1.0.36"]
+  , "version": ["1", "0", "36"]
+  , "pkg_name": ["quote"]
+  }
+, "default": {"type": ["@", "rules", "cargo", "feature"], "name": ["default"]}
+, "proc-macro":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["proc-macro"]}
+}

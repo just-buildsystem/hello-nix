@@ -1,0 +1,105 @@
+{ "syn":
+  { "type": "export"
+  , "target": "syn-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "syn-internal":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["syn"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs":
+    [ "src/spanned.rs"
+    , "src/stmt.rs"
+    , "src/group.rs"
+    , "src/parse.rs"
+    , "src/parse_macro_input.rs"
+    , "src/fixup.rs"
+    , "src/lit.rs"
+    , "src/bigint.rs"
+    , "src/buffer.rs"
+    , "src/classify.rs"
+    , "src/export.rs"
+    , "src/thread.rs"
+    , "src/verbatim.rs"
+    , "src/mac.rs"
+    , "src/meta.rs"
+    , "src/print.rs"
+    , "src/item.rs"
+    , "src/derive.rs"
+    , "src/macros.rs"
+    , "src/error.rs"
+    , "src/parse_quote.rs"
+    , "src/expr.rs"
+    , "src/precedence.rs"
+    , "src/discouraged.rs"
+    , "src/punctuated.rs"
+    , "src/drops.rs"
+    , "src/lib.rs"
+    , "src/lifetime.rs"
+    , "src/op.rs"
+    , "src/generics.rs"
+    , "src/file.rs"
+    , "src/data.rs"
+    , "src/path.rs"
+    , "src/ext.rs"
+    , "src/restriction.rs"
+    , "src/lookahead.rs"
+    , "src/token.rs"
+    , "src/ident.rs"
+    , "src/span.rs"
+    , "src/ty.rs"
+    , "src/sealed.rs"
+    , "src/attr.rs"
+    , "src/whitespace.rs"
+    , "src/custom_keyword.rs"
+    , "src/tt.rs"
+    , "src/pat.rs"
+    , "src/custom_punctuation.rs"
+    , "src/gen/visit_mut.rs"
+    , "src/gen/fold.rs"
+    , "src/gen/hash.rs"
+    , "src/gen/debug.rs"
+    , "src/gen/clone.rs"
+    , "src/gen/visit.rs"
+    , "src/gen/eq.rs"
+    ]
+  , "edition": ["2021"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps":
+    [ ["@", "proc-macro2", "", "proc_macro2"]
+    , ["@", "quote", "", "quote"]
+    , ["@", "unicode-ident", "", "unicode_ident"]
+    ]
+  , "cargo_features":
+    [ "clone-impls"
+    , "default"
+    , "derive"
+    , "parsing"
+    , "printing"
+    , "proc-macro"
+    , "visit"
+    ]
+  , "stage": ["syn-2.0.72"]
+  , "version": ["2", "0", "72"]
+  , "pkg_name": ["syn"]
+  }
+, "clone-impls":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["clone-impls"]}
+, "default": {"type": ["@", "rules", "cargo", "feature"], "name": ["default"]}
+, "derive": {"type": ["@", "rules", "cargo", "feature"], "name": ["derive"]}
+, "extra-traits":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["extra-traits"]}
+, "fold": {"type": ["@", "rules", "cargo", "feature"], "name": ["fold"]}
+, "full": {"type": ["@", "rules", "cargo", "feature"], "name": ["full"]}
+, "parsing": {"type": ["@", "rules", "cargo", "feature"], "name": ["parsing"]}
+, "printing":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["printing"]}
+, "proc-macro":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["proc-macro"]}
+, "test": {"type": ["@", "rules", "cargo", "feature"], "name": ["test"]}
+, "visit": {"type": ["@", "rules", "cargo", "feature"], "name": ["visit"]}
+, "visit-mut":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["visit-mut"]}
+}

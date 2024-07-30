@@ -1,0 +1,24 @@
+{ "byteorder":
+  { "type": "export"
+  , "target": "byteorder-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "byteorder-internal":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["byteorder"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs": ["src/lib.rs", "src/io.rs"]
+  , "edition": ["2021"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps": []
+  , "cargo_features": []
+  , "stage": ["byteorder-1.5.0"]
+  , "version": ["1", "5", "0"]
+  , "pkg_name": ["byteorder"]
+  }
+, "default": {"type": ["@", "rules", "cargo", "feature"], "name": ["default"]}
+, "i128": {"type": ["@", "rules", "cargo", "feature"], "name": ["i128"]}
+, "std": {"type": ["@", "rules", "cargo", "feature"], "name": ["std"]}
+}
