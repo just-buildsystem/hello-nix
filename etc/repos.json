@@ -23,7 +23,7 @@
       { "type": "git"
       , "repository": "https://github.com/just-buildsystem/rules-cc"
       , "branch": "master"
-      , "commit": "0bfac2617f7673c9abb903c155dbd8ddffa26a55"
+      , "commit": "457b1f9dda7366fbb4e6ac4664750bb2bab48e42"
       , "subdir": "rules"
       }
     }
@@ -32,7 +32,7 @@
       { "type": "git"
       , "repository": "https://github.com/just-buildsystem/rules-rust"
       , "branch": "master"
-      , "commit": "132dadc0f34d3cdf0dc2a63bd7644af6d91d67ec"
+      , "commit": "c55a81b17ddd3e213915ce1a4e52f42115620e7e"
       , "subdir": "rules"
       }
     }
@@ -78,67 +78,67 @@
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
       , "cfg-if": "circle_sampling/cfg-if-1.0.0"
-      , "libc": "circle_sampling/libc-0.2.155"
+      , "libc": "circle_sampling/libc-0.2.169"
       }
     , "target_root": "circle_sampling/external-deps"
     , "target_file_name": "TARGETS.getrandom-0.2.15"
     }
-  , "circle_sampling/libc-0.2.155":
+  , "circle_sampling/libc-0.2.169":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/libc/0.2.155/download"
-      , "content": "67353d815cff7dd0c37e4426c338bf7f2534a5c1"
-      , "subdir": "libc-0.2.155"
-      , "distfile": "libc-0.2.155.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/libc/0.2.169/download"
+      , "content": "95f7e55df1a041b233314d7b0a66730b7a57c683"
+      , "subdir": "libc-0.2.169"
+      , "distfile": "libc-0.2.169.tar.gz"
       }
     , "bindings": {"rules": "circle_sampling/rust-rules"}
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.libc-0.2.155"
+    , "target_file_name": "TARGETS.libc-0.2.169"
     }
-  , "circle_sampling/ppv-lite86-0.2.18":
+  , "circle_sampling/ppv-lite86-0.2.20":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/ppv-lite86/0.2.18/download"
-      , "content": "e18dc0d7a9280d177f22f7e96338ea4ce49dd9f9"
-      , "subdir": "ppv-lite86-0.2.18"
-      , "distfile": "ppv-lite86-0.2.18.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/ppv-lite86/0.2.20/download"
+      , "content": "c1d2752462b39ba0ebb6ce2aa7aa65919c42dee8"
+      , "subdir": "ppv-lite86-0.2.20"
+      , "distfile": "ppv-lite86-0.2.20.tar.gz"
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "zerocopy": "circle_sampling/zerocopy-0.6.6"
+      , "zerocopy": "circle_sampling/zerocopy-0.7.35"
       }
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.ppv-lite86-0.2.18"
+    , "target_file_name": "TARGETS.ppv-lite86-0.2.20"
     }
-  , "circle_sampling/proc-macro2-1.0.86":
+  , "circle_sampling/proc-macro2-1.0.93":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/proc-macro2/1.0.86/download"
-      , "content": "f70bd37da3d9d847323b70945dbbe5669e7cdd99"
-      , "subdir": "proc-macro2-1.0.86"
-      , "distfile": "proc-macro2-1.0.86.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/proc-macro2/1.0.93/download"
+      , "content": "62723e72928b2dad367eeb11394cffc5f66a19ad"
+      , "subdir": "proc-macro2-1.0.93"
+      , "distfile": "proc-macro2-1.0.93.tar.gz"
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "unicode-ident": "circle_sampling/unicode-ident-1.0.12"
+      , "unicode-ident": "circle_sampling/unicode-ident-1.0.16"
       }
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.proc-macro2-1.0.86"
+    , "target_file_name": "TARGETS.proc-macro2-1.0.93"
     }
-  , "circle_sampling/quote-1.0.36":
+  , "circle_sampling/quote-1.0.38":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/quote/1.0.36/download"
-      , "content": "c2360e3ce218b963a6b21e2345ee6de406eba2d5"
-      , "subdir": "quote-1.0.36"
-      , "distfile": "quote-1.0.36.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/quote/1.0.38/download"
+      , "content": "d3926cdb47ad75dc1651282d07052c5e049e3e12"
+      , "subdir": "quote-1.0.38"
+      , "distfile": "quote-1.0.38.tar.gz"
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "proc-macro2": "circle_sampling/proc-macro2-1.0.86"
+      , "proc-macro2": "circle_sampling/proc-macro2-1.0.93"
       }
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.quote-1.0.36"
+    , "target_file_name": "TARGETS.quote-1.0.38"
     }
   , "circle_sampling/rand-0.8.5":
     { "repository":
@@ -150,7 +150,7 @@
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "libc": "circle_sampling/libc-0.2.155"
+      , "libc": "circle_sampling/libc-0.2.169"
       , "rand_chacha": "circle_sampling/rand_chacha-0.3.1"
       , "rand_core": "circle_sampling/rand_core-0.6.4"
       }
@@ -167,7 +167,7 @@
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "ppv-lite86": "circle_sampling/ppv-lite86-0.2.18"
+      , "ppv-lite86": "circle_sampling/ppv-lite86-0.2.20"
       , "rand_core": "circle_sampling/rand_core-0.6.4"
       }
     , "target_root": "circle_sampling/external-deps"
@@ -188,67 +188,67 @@
     , "target_root": "circle_sampling/external-deps"
     , "target_file_name": "TARGETS.rand_core-0.6.4"
     }
-  , "circle_sampling/syn-2.0.72":
+  , "circle_sampling/syn-2.0.98":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/syn/2.0.72/download"
-      , "content": "b3df52cf09c0c06c69278508851191eaf0e8115f"
-      , "subdir": "syn-2.0.72"
-      , "distfile": "syn-2.0.72.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/syn/2.0.98/download"
+      , "content": "b6bd1290e07ba2afaa96891e19bc95198ca19baf"
+      , "subdir": "syn-2.0.98"
+      , "distfile": "syn-2.0.98.tar.gz"
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "proc-macro2": "circle_sampling/proc-macro2-1.0.86"
-      , "quote": "circle_sampling/quote-1.0.36"
-      , "unicode-ident": "circle_sampling/unicode-ident-1.0.12"
+      , "proc-macro2": "circle_sampling/proc-macro2-1.0.93"
+      , "quote": "circle_sampling/quote-1.0.38"
+      , "unicode-ident": "circle_sampling/unicode-ident-1.0.16"
       }
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.syn-2.0.72"
+    , "target_file_name": "TARGETS.syn-2.0.98"
     }
-  , "circle_sampling/unicode-ident-1.0.12":
+  , "circle_sampling/unicode-ident-1.0.16":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/unicode-ident/1.0.12/download"
-      , "content": "5e992e985e30c761a0acb1667cb0037439a59474"
-      , "subdir": "unicode-ident-1.0.12"
-      , "distfile": "unicode-ident-1.0.12.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/unicode-ident/1.0.16/download"
+      , "content": "a626c79eb4e80481350c6b0d03a242ee3ec0fe83"
+      , "subdir": "unicode-ident-1.0.16"
+      , "distfile": "unicode-ident-1.0.16.tar.gz"
       }
     , "bindings": {"rules": "circle_sampling/rust-rules"}
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.unicode-ident-1.0.12"
+    , "target_file_name": "TARGETS.unicode-ident-1.0.16"
     }
-  , "circle_sampling/zerocopy-0.6.6":
+  , "circle_sampling/zerocopy-0.7.35":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/zerocopy/0.6.6/download"
-      , "content": "9fbc692df8e1b55561b578a09b8a63a59065dd21"
-      , "subdir": "zerocopy-0.6.6"
-      , "distfile": "zerocopy-0.6.6.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/zerocopy/0.7.35/download"
+      , "content": "392762d4a5825d4062a0f35f88669db7c6b4e98f"
+      , "subdir": "zerocopy-0.7.35"
+      , "distfile": "zerocopy-0.7.35.tar.gz"
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
       , "byteorder": "circle_sampling/byteorder-1.5.0"
-      , "zerocopy-derive": "circle_sampling/zerocopy-derive-0.6.6"
+      , "zerocopy-derive": "circle_sampling/zerocopy-derive-0.7.35"
       }
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.zerocopy-0.6.6"
+    , "target_file_name": "TARGETS.zerocopy-0.7.35"
     }
-  , "circle_sampling/zerocopy-derive-0.6.6":
+  , "circle_sampling/zerocopy-derive-0.7.35":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/zerocopy-derive/0.6.6/download"
-      , "content": "4e74cbc84d4467710270db9b5d90ce6244ca8b15"
-      , "subdir": "zerocopy-derive-0.6.6"
-      , "distfile": "zerocopy-derive-0.6.6.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/zerocopy-derive/0.7.35/download"
+      , "content": "3ae2bbe7e41762fc5a49a56ba63b13561a8944ae"
+      , "subdir": "zerocopy-derive-0.7.35"
+      , "distfile": "zerocopy-derive-0.7.35.tar.gz"
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "proc-macro2": "circle_sampling/proc-macro2-1.0.86"
-      , "quote": "circle_sampling/quote-1.0.36"
-      , "syn": "circle_sampling/syn-2.0.72"
+      , "proc-macro2": "circle_sampling/proc-macro2-1.0.93"
+      , "quote": "circle_sampling/quote-1.0.38"
+      , "syn": "circle_sampling/syn-2.0.98"
       }
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.zerocopy-derive-0.6.6"
+    , "target_file_name": "TARGETS.zerocopy-derive-0.7.35"
     }
   , "circle_sampling/external-deps":
     {"repository": {"type": "file", "path": "etc/deps-rust"}}
