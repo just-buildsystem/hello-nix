@@ -8,7 +8,7 @@
   { "type": ["@", "rules", "rust", "library"]
   , "name": ["byteorder"]
   , "crate_root": ["src/lib.rs"]
-  , "srcs": ["src/lib.rs", "src/io.rs"]
+  , "srcs": ["src/io.rs", "src/lib.rs"]
   , "edition": ["2021"]
   , "arguments_config":
     ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]

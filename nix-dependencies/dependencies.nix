@@ -3,7 +3,7 @@
 , bash
 , pkg-config
 , coreutils
-, protobuf_25
+, protobuf
 , grpc
 , clang
 , fmt
@@ -23,8 +23,6 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     pkg-config
-    protobuf_25
-    grpc
     jo
     bash
   ];
@@ -35,14 +33,16 @@ stdenv.mkDerivation rec {
     coreutils
     gnugrep
     unixtools.xxd
+    protobuf
+    grpc
   ];
 
   buildPhase = ''
     echo PKG_CONFIG_PATH=$PKG_CONFIG_PATH
     jo TOOLCHAIN_CONFIG=$(jo \
           CC=$(jo PATH=$(jo -a ${clang}/bin ${coreutils}/bin ${busybox}/bin)) \
-          PROTO=$(jo PATH=$(jo -a ${protobuf_25}/bin ${grpc}/bin) \
-                     PROTOC=${protobuf_25}/bin/protoc \
+          PROTO=$(jo PATH=$(jo -a ${protobuf}/bin ${grpc}/bin) \
+                     PROTOC=${protobuf}/bin/protoc \
                      GRPC_PLUGIN=${grpc}/bin/grpc_cpp_plugin \
              ) \
           shell=$(jo PATH=$(jo -a ${coreutils}/bin)) \
