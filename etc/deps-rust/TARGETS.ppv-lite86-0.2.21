@@ -3,20 +3,20 @@
   , "name": ["ppv_lite86"]
   , "crate_root": ["src/lib.rs"]
   , "srcs":
-    [ "src/soft.rs"
-    , "src/generic.rs"
-    , "src/types.rs"
+    [ "src/generic.rs"
     , "src/lib.rs"
-    , "src/x86_64/sse2.rs"
+    , "src/soft.rs"
+    , "src/types.rs"
     , "src/x86_64/mod.rs"
+    , "src/x86_64/sse2.rs"
     ]
   , "edition": ["2021"]
   , "arguments_config":
     ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
   , "deps": [["@", "zerocopy", "", "zerocopy"]]
   , "cargo_features": ["simd", "std"]
-  , "stage": ["ppv-lite86-0.2.20"]
-  , "version": ["0", "2", "20"]
+  , "stage": ["ppv-lite86-0.2.21"]
+  , "version": ["0", "2", "21"]
   , "pkg_name": ["ppv-lite86"]
   }
 , "default": {"type": ["@", "rules", "cargo", "feature"], "name": ["default"]}

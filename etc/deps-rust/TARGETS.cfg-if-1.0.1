@@ -1,10 +1,4 @@
 { "cfg_if":
-  { "type": "export"
-  , "target": "cfg_if-internal"
-  , "flexible_config":
-    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
-  }
-, "cfg_if-internal":
   { "type": ["@", "rules", "rust", "library"]
   , "name": ["cfg_if"]
   , "crate_root": ["src/lib.rs"]
@@ -14,12 +8,10 @@
     ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
   , "deps": []
   , "cargo_features": []
-  , "stage": ["cfg-if-1.0.0"]
-  , "version": ["1", "0", "0"]
+  , "stage": ["cfg-if-1.0.1"]
+  , "version": ["1", "0", "1"]
   , "pkg_name": ["cfg-if"]
   }
-, "compiler_builtins":
-  {"type": ["@", "rules", "cargo", "feature"], "name": ["compiler_builtins"]}
 , "core": {"type": ["@", "rules", "cargo", "feature"], "name": ["core"]}
 , "rustc-dep-of-std":
   {"type": ["@", "rules", "cargo", "feature"], "name": ["rustc-dep-of-std"]}
