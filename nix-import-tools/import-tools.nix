@@ -12,15 +12,15 @@ stdenv.mkDerivation rec {
   srcjust = fetchFromGitHub {
     owner = "just-buildsystem";
     repo = "justbuild";
-    rev = "v1.3.1";
-    sha256 = "sha256-kv7HpDEYZml5uk06s8Cxt5rEpxaJBz9s+or6Od1q4Io=";
+    rev = "v1.6.0-beta1";
+    sha256 = "sha256-HEM7f8P8lHOFrv5eRTtMeEKgyxHlZ1uFn5K86Az/csU=";
   };
 
   srcrustrules = fetchFromGitHub {
     owner = "just-buildsystem";
     repo = "rules-rust";
-    rev = "1a8211bda5c14ef0b2bff3af062c049d5598f02f";
-    sha256 = "sha256-97VbtMp5B/5CtOp9U7J6FNB6omlG/YOfMIBFAsaOyjs=";
+    rev = "8ce86a09143d173e331ac7c9c79bddf26c97966d";
+    sha256 = "sha256-S3W8S106CNVgpHAGAgnlrALxDr5FjwnwbS2uBmq3duY=";
   };
 
 

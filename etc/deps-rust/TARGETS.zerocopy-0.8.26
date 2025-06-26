@@ -1,0 +1,72 @@
+{ "zerocopy":
+  { "type": "export"
+  , "target": "zerocopy-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "zerocopy-internal":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["zerocopy"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs":
+    [ "build.rs"
+    , "src/byte_slice.rs"
+    , "src/byteorder.rs"
+    , "src/deprecated.rs"
+    , "src/doctests.rs"
+    , "src/error.rs"
+    , "src/impls.rs"
+    , "src/layout.rs"
+    , "src/lib.rs"
+    , "src/macros.rs"
+    , "src/pointer/inner.rs"
+    , "src/pointer/invariant.rs"
+    , "src/pointer/mod.rs"
+    , "src/pointer/ptr.rs"
+    , "src/pointer/transmute.rs"
+    , "src/ref.rs"
+    , "src/split_at.rs"
+    , "src/util/macro_util.rs"
+    , "src/util/macros.rs"
+    , "src/util/mod.rs"
+    , "src/wrappers.rs"
+    ]
+  , "edition": ["2021"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps": []
+  , "cargo_features": ["simd"]
+  , "stage": ["zerocopy-0.8.26"]
+  , "version": ["0", "8", "26"]
+  , "pkg_name": ["zerocopy"]
+  , "build_script": ["build_script"]
+  }
+, "build_script":
+  { "type": ["@", "rules", "cargo", "build_script"]
+  , "name": ["build_script"]
+  , "crate_root": ["build.rs"]
+  , "extra_data": ["Cargo.toml"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "edition": ["2021"]
+  , "stage": ["zerocopy-0.8.26"]
+  , "deps": []
+  , "cargo_features": ["simd"]
+  , "version": ["0", "8", "26"]
+  , "pkg_name": ["zerocopy"]
+  }
+, "__internal_use_only_features_that_work_on_stable":
+  { "type": ["@", "rules", "cargo", "feature"]
+  , "name": ["__internal_use_only_features_that_work_on_stable"]
+  }
+, "alloc": {"type": ["@", "rules", "cargo", "feature"], "name": ["alloc"]}
+, "derive": {"type": ["@", "rules", "cargo", "feature"], "name": ["derive"]}
+, "float-nightly":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["float-nightly"]}
+, "simd": {"type": ["@", "rules", "cargo", "feature"], "name": ["simd"]}
+, "simd-nightly":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["simd-nightly"]}
+, "std": {"type": ["@", "rules", "cargo", "feature"], "name": ["std"]}
+, "zerocopy-derive":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["zerocopy-derive"]}
+}
