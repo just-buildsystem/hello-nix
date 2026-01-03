@@ -5,22 +5,22 @@
 
 stdenv.mkDerivation rec {
   name = "just-import-tools";
-  version = "2024-06-25";
+  version = "2026-01-03";
 
   buildInputs = [ (python3.withPackages (ps: [])) ];
 
   srcjust = fetchFromGitHub {
     owner = "just-buildsystem";
     repo = "justbuild";
-    rev = "v1.6.0-beta1";
-    sha256 = "sha256-HEM7f8P8lHOFrv5eRTtMeEKgyxHlZ1uFn5K86Az/csU=";
+    rev = "v1.6.3";
+    sha256 = "sha256-ZTwe6S0AH1yQt5mABtIeWuMbiVSKeOZWMFI26fthLsM=";
   };
 
   srcrustrules = fetchFromGitHub {
     owner = "just-buildsystem";
     repo = "rules-rust";
-    rev = "8ce86a09143d173e331ac7c9c79bddf26c97966d";
-    sha256 = "sha256-S3W8S106CNVgpHAGAgnlrALxDr5FjwnwbS2uBmq3duY=";
+    rev = "86601e04b088c973efc62f03d9733fd6d3827241";
+    sha256 = "sha256-84VaDU6YHZtf4hR7pJ1Wt2kPo6qJFvDqwe5nRJHGxxE=";
   };
 
 

@@ -24,7 +24,7 @@
       { "type": "git"
       , "repository": "https://github.com/just-buildsystem/rules-cc"
       , "branch": "master"
-      , "commit": "e0a16722aa13d82779ea1297aa63d8be7dff44c5"
+      , "commit": "194f917e138ef9b30339274bd98aadc05b7d15a9"
       , "subdir": "rules"
       }
     }
@@ -33,21 +33,21 @@
       { "type": "git"
       , "repository": "https://github.com/just-buildsystem/rules-rust"
       , "branch": "master"
-      , "commit": "8ce86a09143d173e331ac7c9c79bddf26c97966d"
+      , "commit": "86601e04b088c973efc62f03d9733fd6d3827241"
       , "subdir": "rules"
       }
     }
-  , "circle_sampling/cfg-if-1.0.1":
+  , "circle_sampling/cfg-if-1.0.4":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/cfg-if/1.0.1/download"
-      , "content": "ffca1b41584b6cdb092060159bbfb1a11a72b360"
-      , "subdir": "cfg-if-1.0.1"
-      , "distfile": "cfg-if-1.0.1.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/cfg-if/1.0.4/download"
+      , "content": "4583ce2be8e05612d4862a6d4c43dbfbf724c042"
+      , "subdir": "cfg-if-1.0.4"
+      , "distfile": "cfg-if-1.0.4.tar.gz"
       }
     , "bindings": {"rules": "circle_sampling/rust-rules"}
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.cfg-if-1.0.1"
+    , "target_file_name": "TARGETS.cfg-if-1.0.4"
     }
   , "circle_sampling":
     { "repository": {"type": "file", "path": "src/rust/cargo/circle"}
@@ -66,23 +66,23 @@
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "cfg-if": "circle_sampling/cfg-if-1.0.1"
-      , "libc": "circle_sampling/libc-0.2.174"
+      , "cfg-if": "circle_sampling/cfg-if-1.0.4"
+      , "libc": "circle_sampling/libc-0.2.179"
       }
     , "target_root": "circle_sampling/external-deps"
     , "target_file_name": "TARGETS.getrandom-0.2.16"
     }
-  , "circle_sampling/libc-0.2.174":
+  , "circle_sampling/libc-0.2.179":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/libc/0.2.174/download"
-      , "content": "b29d3aff5131025c7e438e71be1383283de24c63"
-      , "subdir": "libc-0.2.174"
-      , "distfile": "libc-0.2.174.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/libc/0.2.179/download"
+      , "content": "8ff5da78feb6f20832e049785c521633f88c7eb4"
+      , "subdir": "libc-0.2.179"
+      , "distfile": "libc-0.2.179.tar.gz"
       }
     , "bindings": {"rules": "circle_sampling/rust-rules"}
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.libc-0.2.174"
+    , "target_file_name": "TARGETS.libc-0.2.179"
     }
   , "circle_sampling/ppv-lite86-0.2.21":
     { "repository":
@@ -94,7 +94,7 @@
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "zerocopy": "circle_sampling/zerocopy-0.8.26"
+      , "zerocopy": "circle_sampling/zerocopy-0.8.31"
       }
     , "target_root": "circle_sampling/external-deps"
     , "target_file_name": "TARGETS.ppv-lite86-0.2.21"
@@ -109,7 +109,7 @@
       }
     , "bindings":
       { "rules": "circle_sampling/rust-rules"
-      , "libc": "circle_sampling/libc-0.2.174"
+      , "libc": "circle_sampling/libc-0.2.179"
       , "rand_chacha": "circle_sampling/rand_chacha-0.3.1"
       , "rand_core": "circle_sampling/rand_core-0.6.4"
       }
@@ -147,17 +147,17 @@
     , "target_root": "circle_sampling/external-deps"
     , "target_file_name": "TARGETS.rand_core-0.6.4"
     }
-  , "circle_sampling/zerocopy-0.8.26":
+  , "circle_sampling/zerocopy-0.8.31":
     { "repository":
       { "type": "archive"
-      , "fetch": "https://crates.io/api/v1/crates/zerocopy/0.8.26/download"
-      , "content": "8bb76075ded118c992eae86721e5cf5e792e97bb"
-      , "subdir": "zerocopy-0.8.26"
-      , "distfile": "zerocopy-0.8.26.tar.gz"
+      , "fetch": "https://crates.io/api/v1/crates/zerocopy/0.8.31/download"
+      , "content": "f2acef826dfa961c727d8b1b47764fa73308e587"
+      , "subdir": "zerocopy-0.8.31"
+      , "distfile": "zerocopy-0.8.31.tar.gz"
       }
     , "bindings": {"rules": "circle_sampling/rust-rules"}
     , "target_root": "circle_sampling/external-deps"
-    , "target_file_name": "TARGETS.zerocopy-0.8.26"
+    , "target_file_name": "TARGETS.zerocopy-0.8.31"
     }
   , "circle_sampling/external-deps":
     {"repository": {"type": "file", "path": "etc/deps-rust"}}
