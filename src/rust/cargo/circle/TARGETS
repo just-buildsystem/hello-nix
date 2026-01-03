@@ -2,7 +2,7 @@
   { "type": ["@", "rules", "rust", "binary"]
   , "name": ["circle_sampling"]
   , "crate_root": ["src/main.rs"]
-  , "srcs": ["src/main.rs"]
+  , "srcs": [["TREE", null, "."]]
   , "edition": ["2021"]
   , "arguments_config":
     ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]

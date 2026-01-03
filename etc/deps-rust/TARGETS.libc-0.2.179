@@ -1,0 +1,50 @@
+{ "libc":
+  { "type": "export"
+  , "target": "libc-internal"
+  , "flexible_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  }
+, "libc-internal":
+  { "type": ["@", "rules", "rust", "library"]
+  , "name": ["libc"]
+  , "crate_root": ["src/lib.rs"]
+  , "srcs": [["TREE", null, "."]]
+  , "edition": ["2021"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "deps": []
+  , "cargo_features": []
+  , "stage": ["libc-0.2.179"]
+  , "version": ["0", "2", "179"]
+  , "pkg_name": ["libc"]
+  , "build_script": ["build_script"]
+  }
+, "build_script":
+  { "type": ["@", "rules", "cargo", "build_script"]
+  , "name": ["build_script"]
+  , "crate_root": ["build.rs"]
+  , "extra_data": ["Cargo.toml"]
+  , "arguments_config":
+    ["ARCH", "HOST_ARCH", "TARGET_ARCH", "ENV", "TOOLCHAIN_CONFIG"]
+  , "edition": ["2021"]
+  , "stage": ["libc-0.2.179"]
+  , "deps": []
+  , "cargo_features": []
+  , "version": ["0", "2", "179"]
+  , "pkg_name": ["libc"]
+  }
+, "align": {"type": ["@", "rules", "cargo", "feature"], "name": ["align"]}
+, "const-extern-fn":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["const-extern-fn"]}
+, "default": {"type": ["@", "rules", "cargo", "feature"], "name": ["default"]}
+, "extra_traits":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["extra_traits"]}
+, "rustc-dep-of-std":
+  {"type": ["@", "rules", "cargo", "feature"], "name": ["rustc-dep-of-std"]}
+, "rustc-std-workspace-core":
+  { "type": ["@", "rules", "cargo", "feature"]
+  , "name": ["rustc-std-workspace-core"]
+  }
+, "std": {"type": ["@", "rules", "cargo", "feature"], "name": ["std"]}
+, "use_std": {"type": ["@", "rules", "cargo", "feature"], "name": ["use_std"]}
+}
