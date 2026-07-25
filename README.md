@@ -38,9 +38,13 @@ would look something like
   [ "/home/YOURUSERNAME/.nix-profile/bin/withExtendedPath"
   , "/home/YOURUSERNAME/.nix-profile/bin"
   ]
-, "local build root": {"root": "home", "path": ".cache/just-nix-home"}
+, "local build root": {"root": "home", "path": ".cache/just-nix-home-COMMITID"}
 }
 ```
+where the path to the local build root encodes the home manager commit
+or at least that of the underlying version of the nix packages. As
+configuration files can be defined as built artifacts in the home
+manager, this encoding can be done automatically.
 Such an approach can be useful when dealing with a large number of
 project repositories all requiring basically the same tool chain.
 This discussion also shows how to easily provide a well-defined
